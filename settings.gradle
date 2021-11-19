@@ -8,3 +8,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComponentProject"
 include ':app'
+include ':lib-res'
+include ':version'
+include ':function-mudule'
