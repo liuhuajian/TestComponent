@@ -13,6 +13,23 @@ buildscript {
     }
 }
 
+subprojects {
+    subproject ->
+        {
+            switch (subproject.name) {
+                case "app":
+
+                    break
+                case "function-mudule":
+
+                    break
+                case "lib-res":
+
+                    break
+            }
+        }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

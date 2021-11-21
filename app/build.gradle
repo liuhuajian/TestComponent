@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -13,9 +14,9 @@ android {
         versionCode 1
         versionName "1.0"
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME",project.getName())
             }
         }
 
@@ -44,10 +45,17 @@ android {
 
 dependencies {
     api project(':lib-res')
-    api project(':version')
+//    api project(':version')
     if (!isModule.toBoolean()){
         api project(':function-mudule')
     }
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    implementation 'com.alibaba:arouter-api:1.5.0'
+
+    implementation 'com.google.android.material:material:1.3.0'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }

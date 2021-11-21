@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     fun gotoFuction(view: android.view.View) {
         ARouter.getInstance()
-            .build("/fuction/second")
-            .withBoolean("isCreate",true)
+            .build("/function/second")
+//            .withBoolean("isCreate",true)
             .navigation()
     }
 }

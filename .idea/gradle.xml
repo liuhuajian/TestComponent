@@ -14,7 +14,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/function-mudule" />
             <option value="$PROJECT_DIR$/lib-res" />
-            <option value="$PROJECT_DIR$/version" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

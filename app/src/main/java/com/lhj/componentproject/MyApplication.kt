@@ -1,6 +1,7 @@
 package com.lhj.componentproject
 
 import android.app.Application
+import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
 
 /**
@@ -14,6 +15,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 class MyApplication:Application() {
     override fun onCreate() {
         super.onCreate()
+        Log.i("MyApplication","on create")
 //        if (){
             //打印日志
             ARouter.openLog()
