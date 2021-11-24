@@ -5,6 +5,12 @@
 .DS_Store
 .idea/
 .idea
+app/build/
+libbase/build/
+libcommon/build/
+libres/build/
+modulefunction/build/
+versionplugin/build/
 /build
 /captures
 .externalNativeBuild
