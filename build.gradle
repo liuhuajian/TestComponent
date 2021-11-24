@@ -15,14 +15,15 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.3"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
-
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.20'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
 plugins {
+    //应用versionplugin插件
     id "com.lhj.versionplugin" apply false
 }
 
@@ -44,8 +45,13 @@ allprojects {
 subprojects { subproject ->
     // 默认应用所有子项目中
     apply plugin: 'com.lhj.versionplugin'
+    //对所有项目统一约束资源前缀
+    afterEvaluate {
+        android{
+            resourcePrefix "${project.name}_"
+        }
+    }
     apply plugin: 'kotlin-android'
-
     apply plugin: 'kotlin-kapt'
     // 如果想应用到某个子项目中，可以通过 subProject.name 来判断应用在哪个子项目中
     // subProject.name 是你子项目的名字，示例如下
@@ -61,7 +67,7 @@ subprojects { subproject ->
                 apply plugin:'com.android.library'
             }
             break
-        case "lib-res":
+        default:
             apply plugin:'com.android.library'
             break
     }

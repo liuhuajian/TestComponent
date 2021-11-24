@@ -39,9 +39,9 @@ android {
 }
 
 dependencies {
-    api project(':lib-res')
+    api project(':libRes')
     if (!BuildConfig.moduleFuctionRun){
-        api project(':function-mudule')
+        api project(':moduleFunction')
     }
     kapt Github.arouterCompiler
 }
