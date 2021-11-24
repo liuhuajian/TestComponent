@@ -11,3 +11,5 @@ include ':app'
 include ':libres'
 include ':modulefunction'
 includeBuild("versionplugin")
+include ':libbase'
+include ':libcommon'

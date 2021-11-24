@@ -1,0 +1,42 @@
+import com.lhj.versionplugin.*
+android {
+    compileSdk BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdk BuildConfig.minSdkVersion
+        targetSdk BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME",project.getName())
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs',includes: ['*.jar'])
+    api AndroidX.core
+    api AndroidX.appcompat
+    api Google.material
+    api AndroidX.constraintlayout
+    api Github.arouterApi
+    api MultiDex.packageMultiDex
+    kapt Github.arouterCompiler
+}

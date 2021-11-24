@@ -8,19 +8,25 @@ package com.lhj.versionplugin
  * @CreateDate： 2021/11/24 10:58
  * @Version: 0.1
  */
-object Version {
-
+object Versions {
+    // 低版本分包、64k限制解决
+    const val multiDex = "1.0.3"
 }
 
 object AndroidX {
     const val core = "androidx.core:core-ktx:1.3.2"
     const val appcompat = "androidx.appcompat:appcompat:1.2.0"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+
 }
 
 object Github {
     const val arouterApi = "com.alibaba:arouter-api:1.5.0"
     const val arouterCompiler = "com.alibaba:arouter-compiler:1.2.2"
+}
+
+object MultiDex {
+    const val packageMultiDex = "com.android.support:multidex:${Versions.multiDex}"
 }
 
 object Google {

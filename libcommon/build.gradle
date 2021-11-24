@@ -1,5 +1,4 @@
 import com.lhj.versionplugin.*
-
 android {
     compileSdk BuildConfig.compileSdkVersion
 
@@ -10,14 +9,6 @@ android {
         versionName BuildConfig.versionName
     }
 
-    buildTypes {
-        release {
-            buildConfigField("boolean", "DEBUG_MODE", "false")//是否debug模式
-        }
-        debug {
-            buildConfigField("boolean", "DEBUG_MODE", "true")//是否debug模式
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -28,5 +19,6 @@ android {
 }
 
 dependencies {
-    api project(":libbase")
+    api fileTree(dir: 'libs',includes: ['*.jar'])
+    api project(":libres")
 }

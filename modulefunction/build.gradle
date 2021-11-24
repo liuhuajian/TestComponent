@@ -15,7 +15,43 @@ android {
                 arg("AROUTER_MODULE_NAME",project.getName())
             }
         }
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    if (BuildConfig.moduleFuctionRun){
+        signingConfigs{
+            release {
+                storeFile file('../huajian.jks')
+                storePassword 'xyz3715318'
+                keyAlias 'liuhuajian'
+                keyPassword 'xyz3715318'
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
+            debug {
+                storeFile file('../debug.jks')
+                storePassword '123456'
+                keyAlias = 'android'
+                keyPassword '123456'
+            }
+        }
+
+        buildTypes {
+            release {
+                minifyEnabled true
+                shrinkResources true // 去除无用资源 与lint不同
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                signingConfig signingConfigs.release
+
+                debuggable false //关闭debug
+                jniDebuggable false //关闭debug
+                zipAlignEnabled true //zipalign优化
+            }
+
+            debug {
+                minifyEnabled true
+                signingConfig signingConfigs.debug
+            }
+        }
     }
 
     sourceSets{
@@ -44,6 +80,11 @@ android {
 }
 
 dependencies {
-    api project(':libres')
+    implementation fileTree(dir: 'libs',includes: ['*.jar'])
+    if (BuildConfig.moduleFuctionRun){
+        api project(":libcommon")
+    }else {
+        compileOnly project(":libcommon")
+    }
     kapt Github.arouterCompiler
 }

@@ -23,6 +23,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/libbase" />
+            <option value="$PROJECT_DIR$/libcommon" />
             <option value="$PROJECT_DIR$/libres" />
             <option value="$PROJECT_DIR$/modulefunction" />
             <option value="$PROJECT_DIR$/versionplugin" />
