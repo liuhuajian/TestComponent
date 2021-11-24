@@ -8,6 +8,6 @@
 //}
 rootProject.name = "ComponentProject"
 include ':app'
-include ':libRes'
-include ':moduleFunction'
+include ':libres'
+include ':modulefunction'
 includeBuild("versionplugin")

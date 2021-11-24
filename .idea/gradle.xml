@@ -7,9 +7,9 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/versionPlugin" name="versionPlugin">
+              <build path="$PROJECT_DIR$/versionplugin" name="versionplugin">
                 <projects>
-                  <project path="$PROJECT_DIR$/versionPlugin" />
+                  <project path="$PROJECT_DIR$/versionplugin" />
                 </projects>
               </build>
             </builds>
@@ -23,9 +23,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/libRes" />
-            <option value="$PROJECT_DIR$/moduleFunction" />
-            <option value="$PROJECT_DIR$/versionPlugin" />
+            <option value="$PROJECT_DIR$/libres" />
+            <option value="$PROJECT_DIR$/modulefunction" />
+            <option value="$PROJECT_DIR$/versionplugin" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

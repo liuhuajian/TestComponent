@@ -3,50 +3,35 @@ android {
     compileSdk BuildConfig.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.lhj.componentproject"
+        if (BuildConfig.moduleFuctionRun){
+            applicationId "com.lhj.function_mudule"
+        }
         minSdk BuildConfig.minSdkVersion
         targetSdk BuildConfig.targetSdkVersion
         versionCode BuildConfig.versionCode
         versionName BuildConfig.versionName
-
         kapt {
             arguments {
                 arg("AROUTER_MODULE_NAME",project.getName())
             }
         }
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        release {//可替换成自己的
-            storeFile file('../huajian.jks')
-            storePassword 'xyz3715318'
-            keyAlias 'liuhuajian'
-            keyPassword 'xyz3715318'
-            v1SigningEnabled true
-            v2SigningEnabled true
-        }
-        debug {
-            storeFile file('../debug.jks')
-            storePassword '123456'
-            keyAlias = 'android'
-            keyPassword '123456'
+    sourceSets{
+        main{
+            if (BuildConfig.moduleFuctionRun){
+                manifest.srcFile 'src/main/moduleManifest/AndroidManifest.xml'
+            }else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
         }
     }
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField("boolean","DEBUG_MODE","false")
-            signingConfig signingConfigs.release
-        }
-
-        debug {
-            buildConfigField("boolean","DEBUG_MODE","true")
-            minifyEnabled true
-            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -60,8 +45,5 @@ android {
 
 dependencies {
     api project(':libres')
-    if (!BuildConfig.moduleFuctionRun){
-        api project(':modulefunction')
-    }
     kapt Github.arouterCompiler
 }
