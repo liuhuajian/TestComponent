@@ -17,8 +17,10 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "DEBUG_MODE", "false")//是否debug模式
+        }
+        debug {
+            buildConfigField("boolean", "DEBUG_MODE", "true")//是否debug模式
         }
     }
     compileOptions {

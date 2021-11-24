@@ -9,7 +9,6 @@ import androidx.multidex.MultiDex
 import com.alibaba.android.arouter.launcher.ARouter
 import com.lhj.libbase.base.BaseApplication
 
-//import com.lhj.lib.BuildConfig
 //import com.tencent.bugly.crashreport.CrashReport
 //import com.wanjian.cockroach.Cockroach
 //import com.wanjian.cockroach.ExceptionHandler
@@ -50,7 +49,7 @@ class AppFileProvider : FileProvider() {
      * 阿里路由初始化
      */
     private fun initARouter() {
-        if (BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG_MODE) {
             ARouter.openLog()     // 打印日志
             ARouter.openDebug()   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
         }
