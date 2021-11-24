@@ -1,4 +1,4 @@
-package com.lhj.version
+package com.lhj.versionplugin
 
 import org.junit.Test
 

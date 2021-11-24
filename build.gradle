@@ -1,6 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+import com.lhj.versionplugin.*
 buildscript {
+    ext.kotlin_version = "1.6.0"
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://jitpack.io' }
         google()
         mavenCentral()
     }
@@ -13,21 +22,49 @@ buildscript {
     }
 }
 
-subprojects {
-    subproject ->
-        {
-            switch (subproject.name) {
-                case "app":
+plugins {
+    id "com.lhj.versionplugin" apply false
+}
 
-                    break
-                case "function-mudule":
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        google()
+    }
+}
 
-                    break
-                case "lib-res":
+subprojects { subproject ->
+    // 默认应用所有子项目中
+    apply plugin: 'com.lhj.versionplugin'
+    apply plugin: 'kotlin-android'
 
-                    break
+    apply plugin: 'kotlin-kapt'
+    // 如果想应用到某个子项目中，可以通过 subProject.name 来判断应用在哪个子项目中
+    // subProject.name 是你子项目的名字，示例如下
+    // 官方文档地址：https://guides.gradle.org/creating-multi-project-builds/#add_documentation
+    switch (subproject.name) {
+        case "app":
+            apply plugin:'com.android.application'
+            break
+        case "function-mudule":
+            if (BuildConfig.moduleFuctionRun){
+                apply plugin:'com.android.application'
+            }else {
+                apply plugin:'com.android.library'
             }
-        }
+            break
+        case "lib-res":
+            apply plugin:'com.android.library'
+            break
+    }
 }
 
 task clean(type: Delete) {

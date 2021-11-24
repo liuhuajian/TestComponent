@@ -11,10 +11,9 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'java-gradle-plugin'
 
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+dependencies {
+    implementation gradleApi()
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
 }
 
 repositories {
@@ -23,18 +22,13 @@ repositories {
     google()
 }
 
-dependencies {
-    implementation gradleApi()
-    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
-}
-
 gradlePlugin {
     plugins {
         version {
             // 在 app 模块需要通过 id 引用这个插件
             id = 'com.lhj.versionplugin'
             // 实现这个插件的类的路径
-            implementationClass = 'com.gmjk.os.app.versionplugin.VersionPlugin'
+            implementationClass = 'com.lhj.versionplugin.VersionPlugin'
         }
     }
 }

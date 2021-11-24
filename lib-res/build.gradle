@@ -1,18 +1,13 @@
-
-plugins {
-    id 'kotlin-android'
-    id 'com.android.library'
-    id 'kotlin-kapt'
-}
+import com.lhj.versionplugin.*
 
 android {
-    compileSdk 30
+    compileSdk BuildConfig.compileSdkVersion
 
     defaultConfig {
-        minSdk 25
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        minSdk BuildConfig.minSdkVersion
+        targetSdk BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         kapt {
             arguments {
@@ -38,23 +33,11 @@ android {
 
 dependencies {
 
-    api 'androidx.core:core-ktx:1.3.2'
-    api 'androidx.appcompat:appcompat:1.2.0'
-    api 'com.google.android.material:material:1.3.0'
-    api 'androidx.constraintlayout:constraintlayout:2.0.4'
+    api AndroidX.core
+    api AndroidX.appcompat
+    api Google.material
+    api AndroidX.constraintlayout
 
-    api 'com.alibaba:arouter-api:1.5.0'
-    kapt 'com.alibaba:arouter-compiler:1.2.2'
+    api Github.arouterApi
+    kapt Github.arouterCompiler
 }
-
-//def SDK_BASENAME = "lhj_v1.0"
-//def sdkJarPath = "build"
-//def zipFile = file('build/intermediates/bundles/release/classes.jar')
-//
-//task makeJar(type:Jar){
-//    from zipTree(zipFile)
-//    from fileTree(dir:'src/main',includes:['assest/**'])
-//    baseName = SDK_BASENAME
-//    destinationDir = file(sdkJarPath)
-//}
-//makeJar.dependsOn(build)

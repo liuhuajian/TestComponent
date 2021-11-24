@@ -1,24 +1,15 @@
-plugins {
-    id 'kotlin-android'
-    id 'kotlin-kapt'
-}
-if (isModule.toBoolean()){
-    apply plugin:'com.android.application'
-}else {
-    apply plugin: 'com.android.library'
-}
-
+import com.lhj.versionplugin.*
 android {
-    compileSdk 30
+    compileSdk BuildConfig.compileSdkVersion
 
     defaultConfig {
-        if (isModule.toBoolean()){
+        if (BuildConfig.moduleFuctionRun){
             applicationId "com.lhj.function_mudule"
         }
-        minSdk 25
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        minSdk BuildConfig.minSdkVersion
+        targetSdk BuildConfig.targetSdkVersion
+        versionCode BuildConfig.versionCode
+        versionName BuildConfig.versionName
         kapt {
             arguments {
                 arg("AROUTER_MODULE_NAME",project.getName())
@@ -29,7 +20,7 @@ android {
 
     sourceSets{
         main{
-            if (isModule.toBoolean()){
+            if (BuildConfig.moduleFuctionRun){
                 manifest.srcFile 'src/main/moduleManifest/AndroidManifest.xml'
             }else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -54,5 +45,5 @@ android {
 
 dependencies {
     api project(':lib-res')
-    kapt 'com.alibaba:arouter-compiler:1.2.2'
+    kapt Github.arouterCompiler
 }
