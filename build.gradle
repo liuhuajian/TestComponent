@@ -29,7 +29,6 @@ plugins {
 
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/google' }
@@ -62,7 +61,7 @@ subprojects { subproject ->
         case "app":
             apply plugin:'com.android.application'
             break
-        case "function-mudule":
+        case "modulefunction":
             if (BuildConfig.moduleFuctionRun){
                 apply plugin:'com.android.application'
             }else {

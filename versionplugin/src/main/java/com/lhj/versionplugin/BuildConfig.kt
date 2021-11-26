@@ -20,5 +20,5 @@ object BuildConfig {
     const val versionName = "1.0"
     const val versionCode = 1
 
-    const val moduleFuctionRun = false
+    const val moduleFuctionRun = true
 }

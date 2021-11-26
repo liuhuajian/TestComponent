@@ -11,6 +11,10 @@ package com.lhj.versionplugin
 object Versions {
     // 低版本分包、64k限制解决
     const val multiDex = "1.0.3"
+    const val coroutines = "1.3.9"
+    const val arouterApi = "1.5.0"
+    const val arouterCompiler = "1.2.2"
+    const val material = "1.3.0"
 }
 
 object AndroidX {
@@ -20,9 +24,13 @@ object AndroidX {
 
 }
 
+object Kotlin{
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+}
+
 object Github {
-    const val arouterApi = "com.alibaba:arouter-api:1.5.0"
-    const val arouterCompiler = "com.alibaba:arouter-compiler:1.2.2"
+    const val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApi}"
+    const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompiler}"
 }
 
 object MultiDex {
@@ -30,6 +38,6 @@ object MultiDex {
 }
 
 object Google {
-    const val material = "com.google.android.material:material:1.3.0"
+    const val material = "com.google.android.material:material:${Versions.material}"
 
 }

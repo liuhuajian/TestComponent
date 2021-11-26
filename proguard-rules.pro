@@ -22,3 +22,5 @@
 
 -basedirectory proguard-files
 -include arouter.pro
+-include kotlin.pro
+-include androidx.pro

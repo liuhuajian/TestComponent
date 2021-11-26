@@ -40,5 +40,6 @@ dependencies {
     api AndroidX.constraintlayout
     api Github.arouterApi
     api MultiDex.packageMultiDex
+    api Kotlin.coroutinesAndroid
     kapt Github.arouterCompiler
 }
