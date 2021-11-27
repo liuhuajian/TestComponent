@@ -11,21 +11,29 @@ package com.lhj.versionplugin
 object Versions {
     // 低版本分包、64k限制解决
     const val multiDex = "1.0.3"
-    const val coroutines = "1.3.9"
+    const val coreKtx = "1.3.2"
+    const val appcompat = "1.2.0"
+    const val constraintlayout = "2.0.4"
+
+    // 协程基础库
+    const val kotlinXCoroutinesCore = "1.5.2"
+    // 协程 Android 库，提供 UI 调度器
+    const val kotlinXCoroutinesAndroid = "1.5.2"
+
     const val arouterApi = "1.5.0"
     const val arouterCompiler = "1.2.2"
     const val material = "1.3.0"
 }
 
 object AndroidX {
-    const val core = "androidx.core:core-ktx:1.3.2"
-    const val appcompat = "androidx.appcompat:appcompat:1.2.0"
-    const val constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
-
+    const val core = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
+    const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
 }
 
 object Kotlin{
-    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val kotlinXCoroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinXCoroutinesCore}"
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinXCoroutinesAndroid}"
 }
 
 object Github {

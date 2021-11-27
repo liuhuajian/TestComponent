@@ -12,7 +12,11 @@ import com.lhj.libbase.base.BaseApplication
 //import com.tencent.bugly.crashreport.CrashReport
 //import com.wanjian.cockroach.Cockroach
 //import com.wanjian.cockroach.ExceptionHandler
-//import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
+
 //import kotlinx.coroutines.Dispatchers
 //import kotlinx.coroutines.launch
 
@@ -41,7 +45,7 @@ class AppFileProvider : FileProvider() {
         initARouter()
 //        // DataStore工具类初始化（替代SharedPreferences）
 //        DataStoreUtils.init(context?.applicationContext)
-//        neverCrashInstall()
+        neverCrashInstall()
 //        initBugly()
     }
 
