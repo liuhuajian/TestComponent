@@ -41,5 +41,6 @@ dependencies {
     api Github.arouterApi
     api MultiDex.packageMultiDex
     api Kotlin.coroutinesAndroid
+    api Kotlin.kotlinXCoroutinesCore
     kapt Github.arouterCompiler
 }

@@ -15,7 +15,6 @@ object BuildConfig {
     const val targetSdkVersion = 30
 
     const val applicationId ="com.phz.buildsrcdemo"
-    const val testInstrumentationRunner="androidx.test.runner.AndroidJUnitRunner"
 
     const val versionName = "1.0"
     const val versionCode = 1
