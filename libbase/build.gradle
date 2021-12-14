@@ -38,6 +38,7 @@ dependencies {
     api AndroidX.appcompat
     api Google.material
     api AndroidX.constraintlayout
+    api AndroidX.androidAnnotation
     api Github.arouterApi
     api MultiDex.packageMultiDex
     api Kotlin.coroutinesAndroid

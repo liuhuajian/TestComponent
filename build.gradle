@@ -53,7 +53,7 @@ subprojects { subproject ->
     }
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-kapt'
-    apply plugin: 'kotlin-android-extensions'
+//    apply plugin: 'kotlin-android-extensions'
     // 如果想应用到某个子项目中，可以通过 subProject.name 来判断应用在哪个子项目中
     // subProject.name 是你子项目的名字，示例如下
     // 官方文档地址：https://guides.gradle.org/creating-multi-project-builds/#add_documentation
