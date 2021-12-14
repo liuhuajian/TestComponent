@@ -12,5 +12,6 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         tv_title.text = Constants.BASE_URL
+        lifecycle.addObserver(LifecycleListener())
     }
 }
