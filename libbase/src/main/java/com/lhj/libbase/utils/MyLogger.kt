@@ -1,6 +1,7 @@
-package com.lhj.libbase
+package com.lhj.libbase.utils
 
 import android.util.Log
+import com.lhj.libbase.BuildConfig
 import java.lang.StringBuilder
 
 
