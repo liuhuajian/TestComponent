@@ -1,4 +1,4 @@
-package com.lhj.libbase
+package com.lhj.libbase.widget
 
 import android.view.View
 import java.util.*
@@ -19,7 +19,7 @@ abstract class NoDoubleClickListener: View.OnClickListener {
     }
     override fun onClick(v: View) {
         val currentTime = Calendar.getInstance().timeInMillis
-        if (currentTime - lastClickTime>MIN_CLICK_DELAY_TIME || v.id!=lastViewId){
+        if (currentTime - lastClickTime> MIN_CLICK_DELAY_TIME || v.id!=lastViewId){
             lastViewId = v.id
             lastClickTime = currentTime
             onNoDoubleClick(v)

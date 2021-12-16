@@ -1,14 +1,13 @@
 package com.lhj.libcommon.base
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.lhj.libbase.NoDoubleClickListener
+import com.lhj.libbase.widget.NoDoubleClickListener
 
 /**
  * copyright (C),2021-2022, 国民集团健康科技有限公司
@@ -44,7 +43,7 @@ abstract class BaseActivity :AppCompatActivity(), View.OnClickListener {
 
     fun setOnDoubleClick(vararg views:View){
         views.forEach {
-            it.setOnClickListener(object :NoDoubleClickListener(){
+            it.setOnClickListener(object : NoDoubleClickListener(){
                 override fun onNoDoubleClick(v: View) {
                     this@BaseActivity.onClick(v)
                 }
