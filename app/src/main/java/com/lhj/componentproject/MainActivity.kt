@@ -5,7 +5,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.lhj.componentproject.databinding.ActivityMainBinding
 import com.lhj.libbase.utils.MyLogger
 import com.lhj.libcommon.Constants
-import com.lhj.libcommon.base.BaseActivity
+import com.lhj.libbase.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 

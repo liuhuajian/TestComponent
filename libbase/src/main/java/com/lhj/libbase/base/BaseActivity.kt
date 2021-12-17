@@ -1,4 +1,4 @@
-package com.lhj.libcommon.base
+package com.lhj.libbase.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.lhj.libbase.utils.ActivityFragmentManager
 import com.lhj.libbase.widget.NoDoubleClickListener
 
 /**
@@ -30,6 +31,7 @@ abstract class BaseActivity :AppCompatActivity(), View.OnClickListener {
         bind?.root?.apply {
             setContentView(this)
         }
+        ActivityFragmentManager.getInstance().addActivity(this)
         initView()
         initListener()
         initData()
