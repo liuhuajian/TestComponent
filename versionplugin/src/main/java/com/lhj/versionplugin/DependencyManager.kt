@@ -12,7 +12,8 @@ object Versions {
     // 低版本分包、64k限制解决
     const val multiDex = "1.0.3"
     const val coreKtx = "1.3.2"
-    const val appcompat = "1.2.0"
+    const val appcompat = "1.3.1"
+    const val fragmentKtx = "1.3.0"
     const val constraintlayout = "2.0.4"
     const val androidAnnotation = "1.1.0"
 
@@ -29,6 +30,7 @@ object Versions {
 object AndroidX {
     const val core = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
     const val androidAnnotation = "androidx.annotation:annotation:${Versions.androidAnnotation}"
 }

@@ -6,6 +6,7 @@ import com.lhj.componentproject.databinding.ActivityMainBinding
 import com.lhj.libbase.utils.MyLogger
 import com.lhj.libcommon.Constants
 import com.lhj.libbase.base.BaseActivity
+import com.lhj.libcommon.RoutePathConstants
 
 class MainActivity : BaseActivity() {
 
@@ -26,7 +27,7 @@ class MainActivity : BaseActivity() {
             }
             bind.btnGoFunction ->{
                 ARouter.getInstance()
-                    .build("/function/second")
+                    .build(RoutePathConstants.MODULE_FUNCTION_MAIN)
                     .withBoolean("isCreate",true)
                     .navigation()
             }

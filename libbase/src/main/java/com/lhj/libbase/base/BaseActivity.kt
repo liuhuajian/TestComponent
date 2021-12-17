@@ -1,11 +1,14 @@
 package com.lhj.libbase.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.viewbinding.ViewBinding
 import com.lhj.libbase.utils.ActivityFragmentManager
 import com.lhj.libbase.widget.NoDoubleClickListener
@@ -37,6 +40,11 @@ abstract class BaseActivity :AppCompatActivity(), View.OnClickListener {
         initData()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityFragmentManager.getInstance().removeActivity(this)
+    }
+
     fun setOnClick(vararg views:View){
         views.forEach {
             it.setOnClickListener(this)
@@ -60,6 +68,44 @@ abstract class BaseActivity :AppCompatActivity(), View.OnClickListener {
             val clazz = T::class.java
             val method = clazz.getMethod("inflate",LayoutInflater::class.java)
             method.invoke(null, layoutInflater) as T
+        }
+    }
+
+    /**
+     * 创建fragment对象实例,避免每个fragment都写newInstance
+     *
+     * @receiver Context 上下文对象
+     * @param args Array<out Pair<String, String>> bundle所需要的key,value
+     * @return F fragment 实例
+     */
+    protected inline fun <reified F : Fragment> Context.newFragment(vararg args: Pair<String, String>): F {
+        val bundle = Bundle()
+        args.let {
+            for (arg in args) {
+                bundle.putString(arg.first, arg.second)
+            }
+        }
+        return supportFragmentManager.fragmentFactory.instantiate(classLoader, F::class.java.name)
+            .apply {
+                arguments = bundle
+            } as F
+    }
+
+
+    /**
+     * 设置fragment显示，ktx拓展方法,allowStateLoss设置默认true
+     * @param   fragmentView 显示fragment的viewId
+     * @param   args Array<out Pair<String, String>> bundle所需要的key,value
+     * @param   allowStateLoss  默认为true
+     */
+
+    protected inline fun <reified RF : Fragment> replaceFragment(
+        fragmentView: Int,
+        vararg args: Pair<String, String> = arrayOf(),
+        allowStateLoss: Boolean = true
+    ) {
+        supportFragmentManager.commit(allowStateLoss) {
+            replace(fragmentView, newFragment<RF>(*args))
         }
     }
 

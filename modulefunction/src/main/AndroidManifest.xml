@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComponentProject">
         <activity android:name=".SecondActivity" />
+        <activity android:name=".FragmentTestActivity"/>
     </application>
 
 </manifest>

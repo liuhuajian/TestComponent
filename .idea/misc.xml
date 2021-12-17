@@ -3,22 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android/project/work/github/ComponentProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22447916666666667" />
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.3703125" />
         <entry key="..\:/android/project/work/github/ComponentProject/app/src/main/res/layout/activity_main.xml" value="0.18229166666666666" />
-        <entry key="..\:/android/project/work/github/ComponentProject/app/src/main/res/mipmap-anydpi-v26/app_ic_launcher_round.xml" value="0.21041666666666667" />
         <entry key="..\:/android/project/work/github/ComponentProject/function-mudule/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/android/project/work/github/ComponentProject/libRes/src/main/res/drawable/ic_launcher_background.xml" value="0.22447916666666667" />
-        <entry key="..\:/android/project/work/github/ComponentProject/moduleFunction/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2125" />
-        <entry key="..\:/android/project/work/github/ComponentProject/moduleFunction/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1984375" />
-        <entry key="..\:/android/project/work/github/ComponentProject/modulefunction/src/main/res/layout/activity_fuck.xml" value="0.35190217391304346" />
-        <entry key="..\:/android/project/work/github/ComponentProject/modulefunction/src/main/res/layout/activity_second.xml" value="0.33" />
-        <entry key="..\:/android/project/work/github/ComponentProject/modulefunction/src/main/res/layout/activity_test.xml" value="0.21666666666666667" />
-        <entry key="..\:/android/project/work/github/ComponentProject/modulefunction/src/main/res/layout/fragment_first.xml" value="0.33958333333333335" />
-        <entry key="..\:/android/project/work/github/ComponentProject/modulefunction/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22447916666666667" />
-        <entry key="..\:/android/project/work/github/ComponentProject/modulefunction/src/main/res/mipmap-anydpi-v26/modulefunction_ic_launcher.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3161231884057971" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.29583333333333334" />
         <entry key="function-mudule/src/main/res/layout/activity_main.xml" value="0.5403079710144928" />
+        <entry key="libbase/src/main/res/layout/base_loading_dialog.xml" value="0.4855072463768116" />
+        <entry key="modulefunction/src/main/res/layout/activity_fragment_test.xml" value="0.17864583333333334" />
+        <entry key="modulefunction/src/main/res/layout/activity_main.xml" value="0.34739583333333335" />
+        <entry key="modulefunction/src/main/res/layout/activity_second.xml" value="0.17864583333333334" />
+        <entry key="modulefunction/src/main/res/layout/activity_setting.xml" value="0.34739583333333335" />
+        <entry key="modulefunction/src/main/res/layout/content_main.xml" value="0.34739583333333335" />
+        <entry key="modulefunction/src/main/res/layout/fragment_first.xml" value="0.34739583333333335" />
+        <entry key="modulefunction/src/main/res/layout/fragment_second.xml" value="0.34739583333333335" />
+        <entry key="modulefunction/src/main/res/menu/menu_main.xml" value="0.34739583333333335" />
       </map>
     </option>
   </component>

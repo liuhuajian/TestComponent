@@ -2,12 +2,14 @@ package com.lhj.function_mudule
 
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.lhj.function_mudule.databinding.ActivitySecondBinding
 import com.lhj.libbase.utils.MyLogger
 import com.lhj.libbase.base.BaseActivity
+import com.lhj.libcommon.RoutePathConstants
 import kotlinx.coroutines.*
 
-@Route(path = "/function/second")
+@Route(path = RoutePathConstants.MODULE_FUNCTION_MAIN)
 class SecondActivity : BaseActivity() {
 
     override val bind by getBind<ActivitySecondBinding>()
@@ -31,7 +33,10 @@ class SecondActivity : BaseActivity() {
         super.onClick(v)
         when (v) {
             bind.btnOne -> {
-                data == "hhh"
+                ARouter.getInstance()
+                    .build(RoutePathConstants.MODULE_FUNCTION_SETTING_MAIN)
+                    .withBoolean("isCreate",true)
+                    .navigation()
             }
             bind.btnTwo -> {
                 data1 =="hhh"

@@ -39,6 +39,7 @@ dependencies {
     api fileTree(dir: 'libs',includes: ['*.jar'])
     api AndroidX.core
     api AndroidX.appcompat
+    api AndroidX.fragmentKtx
     api Google.material
     api AndroidX.constraintlayout
     api AndroidX.androidAnnotation
