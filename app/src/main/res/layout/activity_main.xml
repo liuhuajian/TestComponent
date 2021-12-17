@@ -8,7 +8,7 @@
     tools:ignore="ResourceName">
 
     <Button
-        android:onClick="gotoFuction"
+        android:id="@+id/btnGoFunction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="去功能页面"

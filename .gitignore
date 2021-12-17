@@ -5,6 +5,7 @@
 .DS_Store
 .idea/
 .idea
+.idea/misc.xml
 app/build/
 libbase/build/
 libcommon/build/

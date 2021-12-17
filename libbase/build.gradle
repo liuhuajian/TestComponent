@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -38,6 +41,7 @@ dependencies {
     api AndroidX.appcompat
     api Google.material
     api AndroidX.constraintlayout
+    api AndroidX.androidAnnotation
     api Github.arouterApi
     api MultiDex.packageMultiDex
     api Kotlin.coroutinesAndroid

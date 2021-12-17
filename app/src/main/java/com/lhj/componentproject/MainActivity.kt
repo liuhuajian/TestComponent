@@ -1,22 +1,37 @@
 package com.lhj.componentproject
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.view.View
 import com.alibaba.android.arouter.launcher.ARouter
+import com.lhj.componentproject.databinding.ActivityMainBinding
+import com.lhj.libbase.utils.MyLogger
 import com.lhj.libcommon.Constants
-import kotlinx.android.synthetic.main.activity_main.*
+import com.lhj.libbase.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tv_title.text = Constants.BASE_URL
+class MainActivity : BaseActivity() {
+
+    override fun initData() {
+        super.initData()
+        bind.tvTitle.text = Constants.BASE_URL
     }
 
-    fun gotoFuction(view: android.view.View) {
-        ARouter.getInstance()
-            .build("/function/second")
-//            .withBoolean("isCreate",true)
-            .navigation()
+    override fun initListener() {
+        setOnClick(bind.tvTitle)
+        setOnDoubleClick(bind.btnGoFunction)
     }
+
+    override fun onClick(v: View?) {
+        when(v){
+            bind.tvTitle ->{
+                MyLogger.e("tvTitle")
+            }
+            bind.btnGoFunction ->{
+                ARouter.getInstance()
+                    .build("/function/second")
+                    .withBoolean("isCreate",true)
+                    .navigation()
+            }
+        }
+    }
+
+    override val bind by getBind<ActivityMainBinding>()
 }
