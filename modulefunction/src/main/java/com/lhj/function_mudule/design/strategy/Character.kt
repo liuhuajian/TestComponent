@@ -1,5 +1,5 @@
 package com.lhj.function_mudule.design.strategy
 
-interface SpecialAction {
+interface Character {
     fun action()
 }

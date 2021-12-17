@@ -2,12 +2,14 @@ package com.lhj.function_mudule.design.strategy
 
 import android.util.Log
 
-class FamilyDuck: Duck(), SpecialAction {
-    companion object{
-        const val TAG = "FamilyDuck"
+class FamilyDuck: Duck{
+    private val TAG = "FamilyDuck"
+    constructor(){
+        action = FlyAction()
     }
-    override fun action() {
-        Log.i(TAG,"我会捉虫子")
+
+    fun changeAction(character: Character){
+        action = character
     }
 
     override fun displaySurface() {
