@@ -6,7 +6,7 @@ package com.lhj.libbase.utils
  * @Description: leetcode经典算法题
  * @Author: liuhuajian
  * @CreateDate： 2021/12/15 11:16
- * @Version: 0.1
+ * @Version: 0.1 {@link MyLogger}
  */
 object Algorithm {
 

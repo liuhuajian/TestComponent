@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComponentProject">
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".FragmentTestActivity"/>
+        <activity android:name=".ui.SecondActivity" />
+        <activity android:name=".ui.FragmentTestActivity"/>
     </application>
 
 </manifest>

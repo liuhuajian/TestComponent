@@ -11,14 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComponentProject">
         <activity
-            android:name=".SecondActivity"
+            android:name=".ui.SecondActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FragmentTestActivity"/>
+        <activity android:name=".ui.FragmentTestActivity"/>
+        <activity android:name=".ui.MvpTestActivity"/>
     </application>
 
 </manifest>

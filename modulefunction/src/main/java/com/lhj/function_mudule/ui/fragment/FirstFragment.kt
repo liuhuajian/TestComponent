@@ -1,6 +1,5 @@
-package com.lhj.function_mudule
+package com.lhj.function_mudule.ui.fragment
 
-import androidx.viewbinding.ViewBinding
 import com.lhj.function_mudule.databinding.FragmentFirstBinding
 import com.lhj.libbase.base.BaseFragment
 

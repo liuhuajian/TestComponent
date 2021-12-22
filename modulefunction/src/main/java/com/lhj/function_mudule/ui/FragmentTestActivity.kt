@@ -1,9 +1,12 @@
-package com.lhj.function_mudule
+package com.lhj.function_mudule.ui
 
 import android.view.Menu
 import android.view.MenuItem
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.lhj.function_mudule.R
 import com.lhj.function_mudule.databinding.ActivityFragmentTestBinding
+import com.lhj.function_mudule.ui.fragment.FirstFragment
+import com.lhj.function_mudule.ui.fragment.SecondFragment
 import com.lhj.libbase.base.BaseActivity
 import com.lhj.libcommon.RoutePathConstants
 
