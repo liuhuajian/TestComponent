@@ -1,4 +1,4 @@
-package com.lhj.libbase.utils
+package com.lhj.function_mudule
 
 /**
  * copyright (C),2021-2022, 国民集团健康科技有限公司
@@ -10,4 +10,11 @@ package com.lhj.libbase.utils
  */
 object Algorithm {
 
+    /**
+     * 两数之和
+     */
+    fun addTowNumber(intArray: IntArray,target:Int){
+        for (value in intArray){
+        }
+    }
 }
