@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.lhj.function_mudule.Algorithm
 import com.lhj.function_mudule.databinding.ActivitySecondBinding
 import com.lhj.libbase.utils.MyLogger
 import com.lhj.libbase.base.BaseActivity
@@ -30,6 +31,8 @@ class SecondActivity : BaseActivity() {
         super.initView()
         setOnClick(bind.btnOne, bind.btnTwo)
         calculateBinary()
+        var result = Algorithm.addTowNumber(intArrayOf(1,4,6,8,4,5,9),14)
+        MyLogger.e("result-->${result[0]}--->${result[1]}")
 //        getData()
 //        testReflect()
     }
