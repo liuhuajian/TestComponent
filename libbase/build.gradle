@@ -47,5 +47,6 @@ dependencies {
     api MultiDex.packageMultiDex
     api Kotlin.coroutinesAndroid
     api Kotlin.kotlinXCoroutinesCore
+    api Github.BaseRecyclerViewAdapterHelper
     kapt Github.arouterCompiler
 }

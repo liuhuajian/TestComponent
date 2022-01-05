@@ -25,6 +25,8 @@ object Versions {
     const val arouterApi = "1.5.0"
     const val arouterCompiler = "1.2.2"
     const val material = "1.3.0"
+    //一个强大并且灵活的RecyclerViewAdapter
+    const val BaseRecyclerViewAdapterHelper = "3.0.7"
 }
 
 object AndroidX {
@@ -43,6 +45,7 @@ object Kotlin{
 object Github {
     const val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApi}"
     const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompiler}"
+    const val BaseRecyclerViewAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:${Versions.BaseRecyclerViewAdapterHelper}"
 }
 
 object MultiDex {
