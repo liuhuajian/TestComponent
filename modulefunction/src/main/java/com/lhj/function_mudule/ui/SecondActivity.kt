@@ -1,6 +1,10 @@
 package com.lhj.function_mudule.ui
 
 import android.content.Intent
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
+import android.util.Log
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
@@ -11,6 +15,7 @@ import com.lhj.libbase.base.BaseActivity
 import com.lhj.libcommon.RoutePathConstants
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
+import java.util.*
 import kotlin.experimental.and
 
 @Route(path = RoutePathConstants.MODULE_FUNCTION_MAIN)
@@ -30,11 +35,34 @@ class SecondActivity : BaseActivity() {
     override fun initView() {
         super.initView()
         setOnClick(bind.btnOne, bind.btnTwo)
-        calculateBinary()
-        var result = Algorithm.addTowNumber(intArrayOf(1,4,6,8,4,5,9),14)
-        MyLogger.e("result-->${result[0]}--->${result[1]}")
+//        handleHandler()
+//        var result = Algorithm.addTowNumber(intArrayOf(1,4,6,8,4,5,9),14)
+//        MyLogger.e("result-->${result[0]}--->${result[1]}")
 //        getData()
 //        testReflect()
+//        calculateBinary()
+    }
+
+    private fun handleHandler() {
+        MyLogger.i("handleHandler--start")
+        MyLogger.i("handleHandler-->"+Thread.currentThread().name)
+        mainLooper.queue.isIdle
+        mainLooper.setMessageLogging {
+            MyLogger.e("log-->$it")
+        }
+        Handler(Looper.myLooper()!!).post{
+            MyLogger.i("myLooper-->"+Thread.currentThread().name)
+        }
+        MyLogger.i("handleHandler--end1")
+        MyLogger.i("handleHandler--end2")
+        MyLogger.i("handleHandler--end3")
+        MyLogger.i("handleHandler--end4")
+//        var handler = object :Handler(Looper.myLooper()!!){
+//
+//        }
+//        handler.sendMessage(Message.obtain())
+//        handler.post{}
+//        bind.btnOne.post{}
     }
 
     private fun calculateBinary() {
@@ -67,7 +95,8 @@ class SecondActivity : BaseActivity() {
                     .navigation()
             }
             bind.btnTwo -> {
-                startActivity(Intent(this, MvpTestActivity::class.java))
+                startActivity(Intent(this, ViewPager2Activity::class.java))
+//                handleHandler()
             }
         }
     }

@@ -7,10 +7,32 @@
     tools:context=".ui.SecondActivity"
     tools:ignore="ResourceName">
 
+    <SurfaceView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="我是功能页面"
+        android:text="就诊选择"
+        android:textColor="#434b61"
+        android:textSize="76px"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我是我是功能页面功我是功能页面能页面"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,6 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="300px"
+        android:visibility="gone"
         />
     <Button
         android:id="@+id/btnTwo"
@@ -34,6 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnOne"
+        android:visibility="gone"
         />
 
     <TextView
@@ -46,4 +70,10 @@
         android:layout_marginTop="100px"
         />
 
+        <com.lhj.libbase.widget.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 </androidx.constraintlayout.widget.ConstraintLayout>

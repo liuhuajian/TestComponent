@@ -16,6 +16,8 @@ object Versions {
     const val fragmentKtx = "1.3.0"
     const val constraintlayout = "2.0.4"
     const val androidAnnotation = "1.1.0"
+    const val viewpager2 = "1.0.0"
+    const val recyclerview = "1.1.0"
 
     // 协程基础库
     const val kotlinXCoroutinesCore = "1.5.2"
@@ -35,6 +37,8 @@ object AndroidX {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
     const val androidAnnotation = "androidx.annotation:annotation:${Versions.androidAnnotation}"
+    const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
+    const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
 }
 
 object Kotlin{

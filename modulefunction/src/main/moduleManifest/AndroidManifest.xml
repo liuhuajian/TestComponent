@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".ui.FragmentTestActivity"/>
         <activity android:name=".ui.MvpTestActivity"/>
+        <activity android:name=".ui.ViewPager2Activity"/>
     </application>
 
 </manifest>

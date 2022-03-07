@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComponentProject">
         <activity android:name=".ui.SecondActivity" />
+        <activity android:name=".ui.ViewPager2Activity"/>
         <activity android:name=".ui.FragmentTestActivity"/>
         <activity android:name=".ui.MvpTestActivity"/>
     </application>

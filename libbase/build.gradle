@@ -43,6 +43,8 @@ dependencies {
     api Google.material
     api AndroidX.constraintlayout
     api AndroidX.androidAnnotation
+    api AndroidX.viewpager2
+    api AndroidX.recyclerview
     api Github.arouterApi
     api MultiDex.packageMultiDex
     api Kotlin.coroutinesAndroid
