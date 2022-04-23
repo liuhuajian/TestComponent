@@ -36,4 +36,10 @@
         android:layout_margin="20dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <TextView
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:background="#ff0"
+        />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

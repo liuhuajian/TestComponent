@@ -1,5 +1,6 @@
 package com.lhj.function_mudule
 
+import com.lhj.libbase.utils.MyLogger
 import java.util.*
 
 /**
@@ -28,6 +29,7 @@ object Algorithm {
             }
             hashtable[intArray[index]] = index
         }
+        MyLogger.e("result-->${result[0]}--->${result[1]}")
         return result
     }
 }

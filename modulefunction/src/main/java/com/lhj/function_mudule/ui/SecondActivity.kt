@@ -1,22 +1,19 @@
 package com.lhj.function_mudule.ui
 
-import android.content.Intent
-import android.os.Handler
-import android.os.Looper
-import android.os.Message
-import android.util.Log
+import android.graphics.Color
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.lhj.function_mudule.Algorithm
 import com.lhj.function_mudule.databinding.ActivitySecondBinding
-import com.lhj.libbase.utils.MyLogger
 import com.lhj.libbase.base.BaseActivity
+import com.lhj.libbase.utils.MyLogger
+import com.lhj.libbase.utils.Tools.setRoundRectBg
 import com.lhj.libcommon.RoutePathConstants
-import kotlinx.coroutines.*
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
-import java.util.*
-import kotlin.experimental.and
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 @Route(path = RoutePathConstants.MODULE_FUNCTION_MAIN)
 class SecondActivity : BaseActivity() {
@@ -27,6 +24,8 @@ class SecondActivity : BaseActivity() {
     private var data1: String? = null
         get() = getMessage()
 
+    private val callback: ((String, Int) -> String)? = null
+
     private fun getMessage(): String {
         MyLogger.e("getMessage")
         return "hhh"
@@ -35,54 +34,24 @@ class SecondActivity : BaseActivity() {
     override fun initView() {
         super.initView()
         setOnClick(bind.btnOne, bind.btnTwo)
-//        handleHandler()
-//        var result = Algorithm.addTowNumber(intArrayOf(1,4,6,8,4,5,9),14)
-//        MyLogger.e("result-->${result[0]}--->${result[1]}")
+        calculateBinary()
+        Algorithm.addTowNumber(intArrayOf(1, 4, 6, 8, 4, 5, 9), 14)
+        bind.btnOne.setRoundRectBg(Color.RED,arrayOf(13f,13f,0f,0f))
 //        getData()
 //        testReflect()
-//        calculateBinary()
-    }
-
-    private fun handleHandler() {
-        MyLogger.i("handleHandler--start")
-        MyLogger.i("handleHandler-->"+Thread.currentThread().name)
-        mainLooper.queue.isIdle
-        mainLooper.setMessageLogging {
-            MyLogger.e("log-->$it")
-        }
-        Handler(Looper.myLooper()!!).post{
-            MyLogger.i("myLooper-->"+Thread.currentThread().name)
-        }
-        MyLogger.i("handleHandler--end1")
-        MyLogger.i("handleHandler--end2")
-        MyLogger.i("handleHandler--end3")
-        MyLogger.i("handleHandler--end4")
-//        var handler = object :Handler(Looper.myLooper()!!){
-//
-//        }
-//        handler.sendMessage(Message.obtain())
-//        handler.post{}
-//        bind.btnOne.post{}
     }
 
     private fun calculateBinary() {
         val data = byteArrayOf((-116).toByte())
-        MyLogger.e("data-->"+(data[0].toInt()and 0xff))
-
-//        MyLogger.e("byte--("+Byte.MIN_VALUE+","+Byte.MAX_VALUE+")")
-//        MyLogger.e("char--("+Char.MIN_VALUE+","+Char.MAX_VALUE+")")
-//        MyLogger.e("short--("+Short.MIN_VALUE+","+Short.MAX_VALUE+")")
-//        MyLogger.e("Int--("+Int.MIN_VALUE+","+Int.MAX_VALUE+")")
+        MyLogger.e("data-->" + (data[0].toInt() and 0xff))
+        MyLogger.e("byte--("+Byte.MIN_VALUE+","+Byte.MAX_VALUE+")")
+        MyLogger.e("char--("+Char.MIN_VALUE+","+Char.MAX_VALUE+")")
+        MyLogger.e("short--("+Short.MIN_VALUE+","+Short.MAX_VALUE+")")
+        MyLogger.e("Int--("+Int.MIN_VALUE+","+Int.MAX_VALUE+")")
     }
 
     private fun testReflect() {
 
-        val testClass = TestClass("liuhuajian", 11)
-        MyLogger.e("testClass-->"+testClass.name+"-----"+testClass.age)
-        val declaredField = testClass.javaClass.getDeclaredField("name")
-        declaredField.isAccessible = true
-        declaredField.set(testClass,"xuyanfei")
-        MyLogger.e("testClass-->"+testClass.name+"-----"+testClass.age)
     }
 
     override fun onClick(v: View?) {
@@ -91,30 +60,29 @@ class SecondActivity : BaseActivity() {
             bind.btnOne -> {
                 ARouter.getInstance()
                     .build(RoutePathConstants.MODULE_FUNCTION_SETTING_MAIN)
-                    .withBoolean("isCreate",true)
+                    .withBoolean("isCreate", true)
                     .navigation()
             }
             bind.btnTwo -> {
-                startActivity(Intent(this, ViewPager2Activity::class.java))
-//                handleHandler()
             }
         }
     }
 
-    private fun foo(): Flow<Int> = flow{
-        for (i in 1..3){
+    private fun foo(): Flow<Int> = flow {
+        for (i in 1..3) {
             delay(100)
             emit(i)
         }
     }
+
     fun asFlow() = runBlocking {
 
         (1..3).asFlow()
             .take(2)
             .collect { value -> value.toString() }
 
-        (1..3).asFlow().collect {
-            value -> MyLogger.e("$value")
+        (1..3).asFlow().collect { value ->
+            MyLogger.e("$value")
         }
 
         (1..3).asFlow()
@@ -126,16 +94,18 @@ class SecondActivity : BaseActivity() {
                 emit("hhh")
 //                emit(11)
             }
-            .collect{
-                value ->
+            .collect { value ->
             }
     }
 
-    private fun getData(){
+    /**
+     * 协程调试
+     */
+    private fun getData() {
 
         runBlocking {
             launch {
-                for (k in 1..3){
+                for (k in 1..3) {
                     MyLogger.e("I'm not blocked $k")
                     delay(100)
                 }
@@ -170,7 +140,7 @@ class SecondActivity : BaseActivity() {
         return 1000
     }
 
-    suspend fun doSomeThingUsefulTwo():Int{
+    suspend fun doSomeThingUsefulTwo(): Int {
         delay(1000L)
         return 2000
     }
